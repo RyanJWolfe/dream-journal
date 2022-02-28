@@ -87,3 +87,4 @@ group :test do
 end
 
 gem 'material_icons'
+gem "simple_calendar", "~> 2.4"
