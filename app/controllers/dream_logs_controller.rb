@@ -1,5 +1,5 @@
 class DreamLogsController < ApplicationController
-  before_action :set_dream_log, only: %i[ show edit update destroy ]
+  before_action :set_journal
 
   # GET /dream_logs or /dream_logs.json
   def index
@@ -7,8 +7,7 @@ class DreamLogsController < ApplicationController
   end
 
   # GET /dream_logs/1 or /dream_logs/1.json
-  def show
-  end
+  def show; end
 
   # GET /dream_logs/new
   def new
@@ -16,25 +15,12 @@ class DreamLogsController < ApplicationController
   end
 
   # GET /dream_logs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /dream_logs or /dream_logs.json
   def create
-    @journal = Journal.find(params[:journal_id])
-    @dream_log = @journal.dream_logs.create(dream_log_params)
-    redirect_to journal_path(@journal)
-    # @dream_log = DreamLog.new(dream_log_params)
-    #
-    # respond_to do |format|
-    #   if @dream_log.save
-    #     format.html { redirect_to dream_log_url(@dream_log), notice: "Dream log was successfully created." }
-    #     format.json { render :show, status: :created, location: @dream_log }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @dream_log.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @journal.dream_logs.create! dream_log_params
+    redirect_to @journal
   end
 
   # PATCH/PUT /dream_logs/1 or /dream_logs/1.json
@@ -61,13 +47,14 @@ class DreamLogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dream_log
-      @dream_log = DreamLog.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def dream_log_params
-      params.require(:dream_log).permit(:dream, :remember, :body, :sleep_time, :journal_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_journal
+    @journal = Journal.find(params[:journal_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def dream_log_params
+    params.require(:dream_log).permit(:dream, :remember, :body, :sleep_time, :journal_id)
+  end
 end
