@@ -2,11 +2,11 @@
 
 <%= month_calendar(events: @journal.dream_logs) do |date, logs| %>
   <%= date %>
-  <%= link_to material_icon.edit, new_journal_dream_log_path(@journal, :created_at => date), class: "material_icon" %>
+  <%= link_to material_icon.edit.md_18.css_class("dark:text-blue-700"), new_journal_dream_log_path(@journal, :created_at => date) %>
   <% logs.each do |log| %>
-  <div id="dream_logs">
-    <%= render "dream_logs/dream_log_calendar", dream_log: log %>
-  </div>
+    <div id="dream_logs">
+      <%= render "dream_logs/dream_log_calendar", dream_log: log %>
+    </div>
   <% end %>
 <% end %>
 
