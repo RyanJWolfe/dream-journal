@@ -1,0 +1,2 @@
+module DreamLogsHelper
+end

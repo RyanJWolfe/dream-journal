@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_28_015916) do
+ActiveRecord::Schema.define(version: 2022_02_28_020811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dream_logs", force: :cascade do |t|
+    t.boolean "dream"
+    t.boolean "remember"
+    t.text "body"
+    t.integer "sleep_time"
+    t.bigint "journal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["journal_id"], name: "index_dream_logs_on_journal_id"
+  end
 
   create_table "journals", force: :cascade do |t|
     t.string "title"
@@ -22,4 +33,5 @@ ActiveRecord::Schema.define(version: 2022_02_28_015916) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "dream_logs", "journals"
 end

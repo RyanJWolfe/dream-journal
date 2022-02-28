@@ -1,0 +1,32 @@
+<div id="<%= dom_id dream_log %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Dream:</strong>
+    <%= dream_log.dream %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Remember:</strong>
+    <%= dream_log.remember %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Body:</strong>
+    <%= dream_log.body %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sleep time:</strong>
+    <%= dream_log.sleep_time %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Journal:</strong>
+    <%= dream_log.journal_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this dream log", dream_log, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this dream log', edit_dream_log_path(dream_log), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
