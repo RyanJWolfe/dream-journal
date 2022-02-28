@@ -27,7 +27,7 @@ class DreamLogsController < ApplicationController
   def update
     respond_to do |format|
       if @dream_log.update(dream_log_params)
-        format.html { redirect_to dream_log_url(@dream_log), notice: "Dream log was successfully updated." }
+        format.html { redirect_to journal_dream_log_path(@dream_log.journal_id), notice: 'Dream log was successfully updated.' }
         format.json { render :show, status: :ok, location: @dream_log }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class DreamLogsController < ApplicationController
     @dream_log.destroy
 
     respond_to do |format|
-      format.html { redirect_to dream_logs_url, notice: "Dream log was successfully destroyed." }
+      format.html { redirect_to dream_logs_url, notice: 'Dream log was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -51,6 +51,7 @@ class DreamLogsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_journal
     @journal = Journal.find(params[:journal_id])
+    @dream_log = DreamLog.find_by_journal_id(@journal.id)
   end
 
   # Only allow a list of trusted parameters through.
