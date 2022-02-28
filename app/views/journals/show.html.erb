@@ -6,9 +6,37 @@
 
     <%= render @journal %>
 
-    <%= month_calendar do |date| %>
-      <%= date %>
+    <strong class="font-medium mb-1">Dream Logs:</strong>
+    <% @journal.dream_logs.each do |log| %>
+      <%= render 'dream_logs/minimal_dream_log', dream_log: log %>
     <% end %>
+
+    <%#= week_calendar do |date| %>
+      <%#= date %>
+    <%# end %>
+    <h2 class="mt-4">Add a Dream Log:</h2>
+    <%= form_with model: [ @journal, @journal.dream_logs.build ] do |form| %>
+      <p class="flex">
+        <%= form.label :dream %><br>
+        <%= form.check_box :dream, class: "mt-2 h-5 w-5" %>
+      </p>
+      <p class="flex">
+        <%= form.label :remember %>
+        <%= form.check_box :remember, class: "mt-2 h-5 w-5" %>
+      </p>
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+      </p>
+      <p>
+        <%= form.label :sleep_time %>
+        <%= form.number_field :sleep_time, step: 0.5, min: 0 %>
+      </p>
+      <div class="inline">
+        <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+      </div>
+    <% end %>
+
 
     <%= link_to 'Edit this journal', edit_journal_path(@journal), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
