@@ -27,7 +27,6 @@ class DreamLogsController < ApplicationController
 
   # PATCH/PUT /dream_logs/1 or /dream_logs/1.json
   def update
-    puts("HEREREHREHRE")
     respond_to do |format|
       if @dream_log.update(dream_log_params)
         format.html { redirect_to journal_dream_log_path(@dream_log.journal_id), notice: 'Dream log was successfully updated.' }
@@ -59,6 +58,6 @@ class DreamLogsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def dream_log_params
-    params.require(:dream_log).permit(:dream, :remember, :body, :sleep_time, :journal_id)
+    params.require(:dream_log).permit(:dream, :remember, :body, :sleep_time, :journal_id, :created_at)
   end
 end
