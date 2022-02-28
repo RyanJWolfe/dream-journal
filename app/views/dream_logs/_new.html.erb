@@ -1,0 +1,23 @@
+<%= form_with model: [ journal, DreamLog.new ] do |form| %>
+  <div class="card flex flex-col space-y-8">
+    <p class="flex justify-between">
+      <%= form.label :dream %>
+      <%= form.check_box :dream, class: "mt-2 h-5 w-5" %>
+    </p>
+    <p class="flex justify-between">
+      <%= form.label :remember %>
+      <%= form.check_box :remember, class: "mt-2 h-5 w-5" %>
+    </p>
+    <p class="flex justify-between">
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </p>
+    <p class="flex justify-between">
+      <%= form.label :sleep_time %>
+      <%= form.number_field :sleep_time, step: 0.5, min: 0 %>
+    </p>
+    <div class="flex">
+      <%= form.submit class: "flex-grow rounded-lg py-3 px-5 bg-blue-600 text-white font-medium cursor-pointer" %>
+    </div>
+  </div>
+<% end %>
