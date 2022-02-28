@@ -8,16 +8,7 @@
     <% end %>
 
     <%= render @journal %>
-
-    <%= month_calendar(events: @journal.dream_logs) do |date, logs| %>
-      <%= date %>
-
-      <% logs.each do |log| %>
-        <div>
-          <%= render "dream_logs/dream_log_calendar", dream_log: log %>
-        </div>
-      <% end %>
-    <% end %>
+    <%= render 'journals/dream_logs', journal: @journal %>
 
     <%= link_to 'Edit this journal', edit_journal_path(@journal), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

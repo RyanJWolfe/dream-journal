@@ -1,9 +1,14 @@
 <strong class="font-medium mb-1">Dream Logs</strong>
 
+<%= month_calendar(events: @journal.dream_logs) do |date, logs| %>
+<%= date %>
+
+<% logs.each do |log| %>
 <div id="dream_logs">
-  <%= render journal.dream_logs %>
+  <%= render "dream_logs/dream_log_calendar", dream_log: log %>
 </div>
+<% end %>
+<% end %>
 
 <hr class="mt-4">
-
 <%= render "dream_logs/new", journal: journal %>
