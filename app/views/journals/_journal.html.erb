@@ -9,10 +9,6 @@
     <%= journal.author %>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1"><%= pluralize journal.dream_logs.count, "dream log" %></strong>
-  </p>
-
   <% if action_name != "show" %>
     <%= link_to "Show this journal", journal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this journal', edit_journal_path(journal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

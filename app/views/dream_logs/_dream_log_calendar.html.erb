@@ -1,0 +1,16 @@
+<div id="<%= dom_id dream_log %>" class="flex justify-center mt-2">
+  <div class="text-sm">
+    <% if dream_log.dream == false %>
+      <%= material_icon.close %>
+    <% else %>
+      <% if dream_log.remember == false %>
+        Had a dream, but couldn't remember it...
+      <% else %>
+        <%= link_to journal_dream_log_path(dream_log.journal_id) do %>
+          <%= material_icon.cloud_circle.md_36.css_class('dark:text-blue-500') %>
+        <% end %>
+        <%=  %>
+      <%  end %>
+    <% end %>
+  </div>
+</div>
