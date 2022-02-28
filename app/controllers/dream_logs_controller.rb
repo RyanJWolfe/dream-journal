@@ -3,15 +3,17 @@ class DreamLogsController < ApplicationController
 
   # GET /dream_logs or /dream_logs.json
   def index
-    @dream_logs = DreamLog.all
+    @dream_logs = @journal.dream_logs
   end
 
   # GET /dream_logs/1 or /dream_logs/1.json
-  def show; end
+  def show
+    @dream_log = DreamLog.find(params[:id])
+  end
 
   # GET /dream_logs/new
   def new
-    @dream_log = DreamLog.new
+    @dream_log = DreamLog.new(journal_id: @journal.id)
   end
 
   # GET /dream_logs/1/edit
@@ -25,6 +27,7 @@ class DreamLogsController < ApplicationController
 
   # PATCH/PUT /dream_logs/1 or /dream_logs/1.json
   def update
+    puts("HEREREHREHRE")
     respond_to do |format|
       if @dream_log.update(dream_log_params)
         format.html { redirect_to journal_dream_log_path(@dream_log.journal_id), notice: 'Dream log was successfully updated.' }
@@ -38,10 +41,11 @@ class DreamLogsController < ApplicationController
 
   # DELETE /dream_logs/1 or /dream_logs/1.json
   def destroy
+    @dream_log = DreamLog.find(params[:id])
     @dream_log.destroy
 
     respond_to do |format|
-      format.html { redirect_to dream_logs_url, notice: 'Dream log was successfully destroyed.' }
+      format.html { redirect_to @journal, notice: 'Dream log was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -51,7 +55,6 @@ class DreamLogsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_journal
     @journal = Journal.find(params[:journal_id])
-    @dream_log = DreamLog.find_by_journal_id(@journal.id)
   end
 
   # Only allow a list of trusted parameters through.
