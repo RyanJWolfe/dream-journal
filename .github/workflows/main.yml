@@ -44,41 +44,15 @@ jobs:
       - name: run linters
         run: make lint
 
-#  deploy:
-#    name: Deploy
-#    runs-on: ubuntu-latest
-#    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-#    needs: test
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-#      # Add or replace dependency steps here
-#      - name: Install Ruby and gems
-#        uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
-#        with:
-#          bundler-cache: true
-#      - name: Configure SSH
-#        run: |
-#          mkdir -p ~/.ssh/
-#          echo "$SSH_KEY" > ~/.ssh/staging.key
-#          chmod 600 ~/.ssh/staging.key
-#          cat >>~/.ssh/config <<END
-#          Host podsstaging
-#            HostName $SSH_HOST
-#            User $SSH_USER
-#            IdentityFile ~/.ssh/staging.key
-#            StrictHostKeyChecking no
-#          END
-#        env:
-#          SSH_USER: deploy
-#          SSH_KEY: ${{ secrets.STAGING_SSH_KEY }}
-#          SSH_HOST: 52.36.64.116
-#      - name: Deploy to AWS
-#        run: make deploy
-#        env:
-#          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
-#          RDS_PASSWORD: ${{ secrets.RDS_PASSWORD }}
-#          RDS_USERNAME: postgres
-#          RDS_PORT: 5432
-#          RDS_DB_NAME: pods
-#          RDS_HOSTNAME: pods-postgres.cwlqsltmiil5.us-west-2.rds.amazonaws.com
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
