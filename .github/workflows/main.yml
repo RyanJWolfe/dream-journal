@@ -2,6 +2,7 @@ name: CI/CD
 on: [push, pull_request]
 jobs:
   test:
+    if: ${{ false }}
     name: Tests
     runs-on: ubuntu-latest
     services:
@@ -32,6 +33,7 @@ jobs:
         run: make test
 
   lint:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
