@@ -3,9 +3,9 @@
 <div id="journals" class="mx-auto md:w-2/3 w-full flex">
 
   <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="notice" id="notice"><%= notice %></p>
-    <% end %>
+    <%# if notice.present? %>
+<!--      <p class="notice" id="notice"><%#= notice %></p>-->
+    <%# end %>
 
     <%= render @journal %>
     <%= render 'journals/dream_logs', journal: @journal %>

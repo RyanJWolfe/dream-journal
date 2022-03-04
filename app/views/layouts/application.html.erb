@@ -17,9 +17,11 @@
     <%= render 'layouts/navbar' %>
   </header>
   <main class="container mt-10 px-5 mx-auto mb-auto">
-    <% if notice.present? %>
-      <p class="notice" id="notice"><%= notice %></p>
-    <% end %>
+    <div class="flex justify-center items-center">
+      <% if notice.present? %>
+        <p class="notice" id="notice"><%= notice %></p>
+      <% end %>
+    </div>
     <% if alert.present? %>
       <p class="alert" id="alert"><%= alert %></p>
     <% end %>
