@@ -9,10 +9,28 @@
     .card {
         @apply p-4 bg-white shadow rounded;
     }
+    .text-field {
+        @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full
+    }
+    .text-field-small {
+        @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2
+    }
     .notice {
         @apply py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block;
     }
     .alert {
         @apply py-2 px-3 bg-yellow-50 mb-5 text-gray-500 font-medium rounded-lg inline-block;
+    }
+    .error {
+        @apply bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3
+    }
+    .btn-gray {
+        @apply ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium
+    }
+    .btn-blue {
+        @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer
+    }
+    .btn-red {
+        @apply rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer
     }
 }
