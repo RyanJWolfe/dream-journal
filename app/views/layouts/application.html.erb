@@ -17,6 +17,12 @@
     <%= render 'layouts/navbar' %>
   </header>
   <main class="container mt-10 px-5 mx-auto mb-auto">
+    <% if notice.present? %>
+      <p class="notice" id="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert" id="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </main>
   <footer class="mt-12">
