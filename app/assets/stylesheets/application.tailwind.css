@@ -9,4 +9,10 @@
     .card {
         @apply p-4 bg-white shadow rounded;
     }
+    .notice {
+        @apply py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block;
+    }
+    .alert {
+        @apply py-2 px-3 bg-yellow-50 mb-5 text-gray-500 font-medium rounded-lg inline-block;
+    }
 }
