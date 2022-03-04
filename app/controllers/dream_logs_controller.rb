@@ -1,5 +1,6 @@
 class DreamLogsController < ApplicationController
   before_action :set_journal
+  before_action :set_dream_log, only: %i[show edit update destroy]
 
   # GET /dream_logs or /dream_logs.json
   def index
@@ -17,7 +18,9 @@ class DreamLogsController < ApplicationController
   end
 
   # GET /dream_logs/1/edit
-  def edit; end
+  def edit
+    @dream_log = DreamLog.find(params[:id])
+  end
 
   # POST /dream_logs or /dream_logs.json
   def create
@@ -27,6 +30,7 @@ class DreamLogsController < ApplicationController
 
   # PATCH/PUT /dream_logs/1 or /dream_logs/1.json
   def update
+    @dream_log = DreamLog.find(params[:id])
     respond_to do |format|
       if @dream_log.update(dream_log_params)
         format.html { redirect_to journal_dream_log_path(@dream_log.journal_id), notice: 'Dream log was successfully updated.' }
@@ -54,6 +58,10 @@ class DreamLogsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_journal
     @journal = Journal.find(params[:journal_id])
+  end
+
+  def set_dream_log
+    @dream_log = DreamLog.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
