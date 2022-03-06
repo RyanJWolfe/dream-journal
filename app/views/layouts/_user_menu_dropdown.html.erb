@@ -1,0 +1,22 @@
+<div data-user-menu-target="dropdown" class="hidden absolute right-0 navbar-dropdown" id="dropdown" aria-orientation="vertical" aria-labelledby="user-menu-button">
+  <div class="py-3 px-4">
+    <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+    <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+  </div>
+  <ul class="py-1">
+    <li>
+      <a href="#" class="navbar-dropdown-list-item">Dashboard</a>
+    </li>
+    <li>
+      <a href="#" class="navbar-dropdown-list-item">Settings</a>
+    </li>
+    <li>
+      <a href="#" class="navbar-dropdown-list-item">Earnings</a>
+    </li>
+    <% if user_signed_in? %>
+      <li class="navbar-dropdown-list-item">
+        <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+      </li>
+    <% end %>
+  </ul>
+</div>

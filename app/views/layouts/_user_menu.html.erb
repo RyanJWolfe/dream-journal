@@ -1,32 +1,10 @@
 <div class="flex items-center md:order-2 md:space-x-2">
-  <div class="flex flex-col">
+  <div class="relative">
     <button data-action="click->user-menu#toggle" type="button" class="navbar-btn" id="user-menu-button" aria-haspopup="true" aria-expanded="false" type="button">
       <span class="sr-only">Open user menu</span>
       <%= material_icon.account_circle.css_class('md-light md-36') %>
     </button>
-    <!-- Dropdown menu -->
-    <div data-user-menu-target="dropdown" class="hidden absolute navbar-dropdown" id="dropdown" aria-orientation="vertical" aria-labelledby="user-menu-button">
-      <div class="py-3 px-4">
-        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-        <span class="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-      </div>
-      <ul class="py-1">
-        <li>
-          <a href="#" class="navbar-dropdown-list-item">Dashboard</a>
-        </li>
-        <li>
-          <a href="#" class="navbar-dropdown-list-item">Settings</a>
-        </li>
-        <li>
-          <a href="#" class="navbar-dropdown-list-item">Earnings</a>
-        </li>
-        <% if user_signed_in? %>
-          <li class="navbar-dropdown-list-item">
-            <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'layouts/user_menu_dropdown' %>
   </div>
   <%= render 'layouts/mobile_menu_button' %>
 </div>
