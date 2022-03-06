@@ -4,8 +4,8 @@
       <%= image_tag('dream_journal_icon.png', alt: "Logo", class: "mr-3 h-10") %>
       <span class="hidden md:block navbar-title">Dream Journal</span>
     </a>
-    <%= render 'layouts/user_menu' if user_signed_in? %>
-    <%= render 'layouts/navbar_login' unless user_signed_in? %>
-    <%= render 'layouts/navbar_menu' %>
+    <%= render 'layouts/navbar/user_menu' if user_signed_in? %>
+    <%= render 'layouts/navbar/navbar_login' unless user_signed_in? %>
+    <%= render 'layouts/navbar/navbar_menu' %>
   </div>
 </nav>
