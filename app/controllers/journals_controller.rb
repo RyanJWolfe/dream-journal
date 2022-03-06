@@ -6,7 +6,11 @@ class JournalsController < ApplicationController
 
   # GET /journals or /journals.json
   def index
-    @journals = Journal.all
+    if journal_user_params[:user_id]
+      @journals = current_user.journals
+    else
+      @journals = Journal.all
+    end
   end
 
   # GET /journals/1 or /journals/1.json
@@ -67,6 +71,10 @@ class JournalsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def journal_params
-    params.require(:journal).permit(:title, :author)
+    params.require(:journal).permit(:title, :author, :user_id)
+  end
+
+  def journal_user_params
+    params.permit(:user_id)
   end
 end

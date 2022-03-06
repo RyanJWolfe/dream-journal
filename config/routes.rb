@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     get "users", to: "devise/sessions#new"
   end
   devise_for :users
+  resources :users do
+    resources :journals do
+      resources :dream_logs
+    end
+  end
   resources :journals do
     resources :dream_logs
   end
