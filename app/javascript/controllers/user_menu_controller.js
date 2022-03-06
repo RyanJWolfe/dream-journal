@@ -9,6 +9,7 @@ export default class extends Controller {
   }
 
   hide() {
-    this.dropdownTarget.classList.add('hidden')
+    if (this.hasDropdownTarget)
+      this.dropdownTarget.classList.add('hidden')
   }
 }

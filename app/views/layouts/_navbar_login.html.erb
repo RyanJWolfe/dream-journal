@@ -1,8 +1,5 @@
 <div class="flex md:space-x-4 md:order-2">
-  <% unless user_signed_in? %>
-    <%= link_to "Sign in", new_user_session_path, class: "navbar-header" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "navbar-header" %>
-  <% else %>
-    <%= button_to "Sign out", destroy_user_session_path, class: "navbar-header", :method => :delete %>
-  <% end %>
+  <%= link_to "Sign in", new_user_session_path, class: "navbar-header border-0" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "navbar-header border-0" %>
+  <%= render 'layouts/mobile_menu_button' %>
 </div>
