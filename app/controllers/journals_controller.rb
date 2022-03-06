@@ -21,7 +21,7 @@ class JournalsController < ApplicationController
 
   # POST /journals or /journals.json
   def create
-    @journal = Journal.new(journal_params)
+    @journal = current_user.journals.create! journal_params
 
     respond_to do |format|
       if @journal.save
