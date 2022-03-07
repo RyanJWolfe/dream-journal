@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+    .body {
+        @apply bg-gray-700 text-gray-700 dark:text-gray-200
+    }
     .btn-purple-blue {
         @apply text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
     }
@@ -25,7 +28,7 @@
         @apply bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3
     }
     .btn-gray {
-        @apply ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium
+        @apply ml-2 rounded-lg py-3 px-5 bg-gray-600 inline-block font-medium
     }
     .btn-blue {
         @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer
