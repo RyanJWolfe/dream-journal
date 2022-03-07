@@ -10,9 +10,6 @@
     <li>
       <a href="#" class="navbar-dropdown-list-item">Settings</a>
     </li>
-    <li>
-      <a href="#" class="navbar-dropdown-list-item">Earnings</a>
-    </li>
     <% if user_signed_in? %>
       <li class="navbar-dropdown-list-item">
         <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
