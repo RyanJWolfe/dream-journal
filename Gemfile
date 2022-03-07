@@ -90,3 +90,4 @@ end
 gem 'material_icons'
 gem 'simple_calendar', '~> 2.4'
 gem 'devise'
+gem "font-awesome-rails"
