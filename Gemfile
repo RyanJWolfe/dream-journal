@@ -87,7 +87,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'devise'
+gem 'font-awesome-rails'
 gem 'material_icons'
 gem 'simple_calendar', '~> 2.4'
-gem 'devise'
-gem "font-awesome-rails"
