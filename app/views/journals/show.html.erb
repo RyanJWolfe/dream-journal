@@ -10,10 +10,12 @@
     <%= render @journal %>
     <%= render 'journals/dream_logs', journal: @journal %>
 
-    <%= link_to 'Edit this journal', edit_journal_path(@journal), class: "btn-gray" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
+    <hr class="my-4 divider" />
+
+    <div class="inline-flex">
+      <%= link_to 'Edit journal', edit_journal_path(@journal), class: "btn-gray" %>
+      <%= button_to 'Delete journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
+      <%= link_to 'Back to all journals', journals_path, class: "btn-gray" %>
     </div>
-    <%= link_to 'Back to journals', journals_path, class: "btn-gray" %>
   </div>
 </div>
