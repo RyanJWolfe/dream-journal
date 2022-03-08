@@ -1,21 +1,14 @@
 <%= turbo_stream_from @journal %>
 
-<div id="journals" class="mx-auto md:w-2/3 w-full flex">
+<div id="journals" class="flex flex-col max-w-xl mx-auto items-center">
+  <%= render @journal %>
+  <hr class="my-4 divider" />
+  <%= render 'journals/dream_logs', journal: @journal %>
+  <hr class="my-4 divider" />
 
-  <div class="mx-auto">
-    <%# if notice.present? %>
-<!--      <p class="notice" id="notice"><%#= notice %></p>-->
-    <%# end %>
-
-    <%= render @journal %>
-    <hr class="my-4 divider" />
-    <%= render 'journals/dream_logs', journal: @journal %>
-    <hr class="my-4 divider" />
-
-    <div class="inline-flex">
-      <%= link_to 'Edit journal', edit_journal_path(@journal), class: "btn-gray" %>
-      <%= button_to 'Delete journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
-      <%= link_to 'Back to all journals', journals_path, class: "btn-gray" %>
-    </div>
+  <div class="inline-flex">
+    <%= link_to 'Edit journal', edit_journal_path(@journal), class: "btn-gray" %>
+    <%= button_to 'Delete journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
+    <%= link_to 'Back to all journals', journals_path, class: "btn-gray" %>
   </div>
 </div>

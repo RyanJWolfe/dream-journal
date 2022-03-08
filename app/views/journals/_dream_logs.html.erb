@@ -1,6 +1,4 @@
-<div>
-  <strong class="font-medium my-6">Dream Logs</strong>
-
+<div class="flex flex-col space-y-2 items-center">
   <%= calendar(events: @journal.dream_logs) do |date, logs| %>
     <%= date %>
     <%= link_to fa_icon('pencil-square-o', class: "dark:text-blue-700"), new_journal_dream_log_path(@journal, :created_at => date) %>

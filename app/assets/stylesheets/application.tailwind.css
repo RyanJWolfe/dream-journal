@@ -97,4 +97,7 @@
     input:checked + .toggle-bg {
         @apply bg-blue-600 border-blue-600;
     }
+    .calendar-heading {
+        @apply flex space-x-4 justify-center my-2
+    }
 }
