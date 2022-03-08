@@ -4,16 +4,10 @@
     <%= link_to 'New journal', new_journal_path, class: "btn-blue" %>
   </div>
 
-  <hr class="my-6 divider flex">
+  <hr class="my-4 divider flex">
 
-  <div id="journals" class="min-w-full flex flex-col items-center">
-    <% if @journals.length > 0  %>
-      <% @journals.each do |journal| %>
-        <%= render 'journals/journal_card', journal: journal %>
-      <% end %>
-    <% else %>
-      <p class="text-green-500">No journals were found</p>
-    <% end %>
+  <div id="journals" class="flex flex-col items-center">
+    <%= render 'journals/journals_card' %>
   </div>
 
 </div>

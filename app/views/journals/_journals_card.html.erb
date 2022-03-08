@@ -1,0 +1,9 @@
+<div>
+  <% if @journals.length > 0  %>
+    <% @journals.each do |journal| %>
+      <%= render 'journals/journal_card', journal: journal %>
+    <% end %>
+  <% else %>
+    <p class="text-green-500">No journals were found</p>
+  <% end %>
+</div>
