@@ -1,10 +1,9 @@
-<div id="<%= dom_id dream_log %>" class="flex flex-col card">
-  <div class="my-4">
-    <strong class="inline-block font-medium mb-1">Date:</strong>
+<div id="<%= dom_id dream_log %>" class="flex flex-col">
+  <div class="card-header">
     <%= dream_log.created_at.to_date %>
   </div>
 
-  <div class="text-sm">
+  <div class="card-text">
     <% if dream_log.dream == false %>
       No Dream...
     <% else %>

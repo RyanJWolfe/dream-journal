@@ -6,7 +6,7 @@
 
     <%= render 'dream_log', dream_log: @dream_log %>
     <div class="inline-flex">
-      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "btn-gray" %>
+      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "btn-blue" %>
       <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "btn-gray" %>
       <%= link_to 'Back to journal', @dream_log.journal, class: "btn-gray" %>
     </div>

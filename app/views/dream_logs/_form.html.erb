@@ -14,22 +14,22 @@
   <%= form.hidden_field :created_at %>
 
   <div class="my-5">
-    <%= form.label :dream %>
+    <%= form.label :dream, class: "input-label" %>
     <%= form.check_box :dream, class: "block mt-2 h-5 w-5" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :remember %>
+    <%= form.label :remember, class: "input-label" %>
     <%= form.check_box :remember, class: "block mt-2 h-5 w-5" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :body %>
+    <%= form.label :body, class: "input-label" %>
     <%= form.text_area :body, rows: 4, class: "text-field" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :sleep_time %>
+    <%= form.label :sleep_time, class: "input-label" %>
     <%= form.number_field :sleep_time, class: "text-field" %>
   </div>
 
