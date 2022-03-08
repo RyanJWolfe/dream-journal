@@ -11,9 +11,7 @@
       <a href="#" class="navbar-dropdown-list-item">Settings</a>
     </li>
     <% if user_signed_in? %>
-      <li class="navbar-dropdown-list-item">
-        <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
-      </li>
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-dropdown-list-item w-full text-left" %>
     <% end %>
   </ul>
 </div>
