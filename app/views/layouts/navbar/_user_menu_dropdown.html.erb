@@ -8,7 +8,7 @@
       <%= link_to "Dashboard", user_journals_path(current_user.id), class: "navbar-dropdown-list-item" %>
     </li>
     <li>
-      <a href="#" class="navbar-dropdown-list-item">Settings</a>
+      <%= link_to "Settings", '/users/edit',  class: "navbar-dropdown-list-item" %>
     </li>
     <% if user_signed_in? %>
       <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-dropdown-list-item w-full text-left" %>
