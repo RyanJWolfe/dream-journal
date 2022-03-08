@@ -1,0 +1,16 @@
+<div id="<%= dom_id journal %>" class="card my-4">
+  <p class="mt-5 card-header">
+    <%= journal.title %>
+  </p>
+
+  <p class="mt-2 card-text">
+    <%= journal.author %>
+  </p>
+
+  <hr class="my-6 divider">
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this journal", journal, class: "btn-gray" %>
+    <%= link_to 'Edit this journal', edit_journal_path(journal), class: "btn-gray" %>
+  <% end %>
+</div>
