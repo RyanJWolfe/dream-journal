@@ -2,8 +2,8 @@
   <h1 class="font-bold text-4xl">Log in</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="my-5">
-      <%= f.label :email, "Your email", class: "input-label" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text-field" %>
+      <%= f.label :email, "Your email", class: "input-label block" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "username@email.com", class: "text-field" %>
     </div>
 
     <div class="mt-5">
