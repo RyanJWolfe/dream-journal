@@ -6,7 +6,7 @@
     <p class="card-text">Developed in Rails 7 with TailwindCSS</p>
   </div>
   <div id="icon-links" class="flex space-x-8">
-    <%= link_to fa_icon("linkedin", class: "fa-2x"), 'https://www.linkedin.com/in/ryan-wolfe-64652a115/', :target => '_blank' %>
-    <%= link_to fa_icon("github", class: "fa-2x"), 'https://github.com/RyanJWolfe', :target => '_blank' %>
+    <%= render 'contact/linkedin_link' %>
+    <%= render 'contact/github_link' %>
   </div>
 </div>
