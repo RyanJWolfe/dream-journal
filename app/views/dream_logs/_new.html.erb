@@ -1,5 +1,5 @@
 <%= form_with model: [ journal, DreamLog.new ] do |form| %>
-  <div class="card pointer-events-none flex flex-col space-y-8">
+  <div class="card-static flex flex-col space-y-8">
     <p class="flex justify-between">
       <%= form.label :dream, class: "input-label" %>
       <%= form.check_box :dream, class: "mt-2 h-5 w-5" %>
