@@ -14,7 +14,7 @@ class DreamLogsController < ApplicationController
 
   # GET /dream_logs/new
   def new
-    @dream_log = DreamLog.new(journal_id: @journal.id)
+    @dream_log = DreamLog.new(journal_id: @journal.id, dream: true)
   end
 
   # GET /dream_logs/1/edit

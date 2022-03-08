@@ -1,7 +1,7 @@
 <div class="mx-auto md:w-2/3 w-full">
   <h1 class="font-bold text-4xl">New dream log</h1>
 
-  <%= render "form", journal: @journal, dream_log: DreamLog.new(created_at: params[:created_at]) %>
+  <%= render "form", journal: @journal, dream_log: DreamLog.new(created_at: params[:created_at], dream: true) %>
 
   <%= link_to 'Back to journal', @journal, class: "btn-gray" %>
 </div>

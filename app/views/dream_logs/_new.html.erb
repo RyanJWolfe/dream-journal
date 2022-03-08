@@ -1,4 +1,4 @@
-<%= form_with model: [ journal, DreamLog.new ] do |form| %>
+<%= form_with model: [ journal, DreamLog.new(dream: true) ] do |form| %>
   <div class="card-static flex flex-col space-y-8">
     <%= form.label :dream, class: "my-5 flex relative items-center cursor-pointer" do %>
       <%= form.check_box :dream, class: "sr-only" %>
