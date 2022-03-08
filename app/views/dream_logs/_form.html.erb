@@ -13,16 +13,16 @@
 
   <%= form.hidden_field :created_at %>
 
-  <%= form.label :dream, class: "my-5 flex relative items-center cursor-pointer" do %>
+  <%= form.label :dream, class: "toggle-label" do %>
     <%= form.check_box :dream, class: "sr-only" %>
-    <div class="toggle-switch"></div>
-    <span class="toggle-switch-label">Did you have a dream?</span>
+    <div class="toggle-div"></div>
+    <span class="toggle-span">Did you have a dream?</span>
   <% end %>
 
-  <%= form.label :remember, class: "my-5 flex relative items-center cursor-pointer" do %>
+  <%= form.label :remember, class: "toggle-label" do %>
     <%= form.check_box :remember, class: "sr-only" %>
-    <div class="toggle-switch"></div>
-    <span class="toggle-switch-label">Do you remember your dream?</span>
+    <div class="toggle-div"></div>
+    <span class="toggle-span">Do you remember your dream?</span>
   <% end %>
 
   <div class="my-5">
