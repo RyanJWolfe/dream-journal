@@ -1,14 +1,10 @@
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
-    <%# if notice.present? %>
-<!--      <p class="notice" id="notice"><%#= notice %></p>-->
-    <%# end %>
-
     <%= render 'dream_log', dream_log: @dream_log %>
-    <div class="inline-flex">
-      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "btn-blue" %>
-      <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "btn-gray" %>
-      <%= link_to 'Back to journal', @dream_log.journal, class: "btn-gray" %>
+    <div class="inline-flex space-x-1">
+      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "inline-flex btn-blue" %>
+      <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "inline-flex btn-gray" %>
     </div>
+    <%= link_to 'Back to journal', @dream_log.journal, class: "inline-flex btn-gray" %>
   </div>
 </div>

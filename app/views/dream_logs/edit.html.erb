@@ -3,6 +3,6 @@
 
   <%= render "form", journal: @dream_log.journal, dream_log: @dream_log %>
 
-  <%= link_to "Show this dream log", journal_dream_log_path(@dream_log.journal_id), class: "btn-gray" %>
-  <%= link_to "Back to journal", @dream_log.journal, class: "btn-gray" %>
+  <%= link_to "Show this dream log", journal_dream_log_path(@dream_log.journal_id), class: "inline-flex btn-gray" %>
+  <%= link_to "Back to journal", @dream_log.journal, class: "inline-flex btn-gray" %>
 </div>
