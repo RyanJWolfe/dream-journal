@@ -5,11 +5,10 @@
     <%# end %>
 
     <%= render 'dream_log', dream_log: @dream_log %>
-
-    <%= link_to 'Edit this entry', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this entry', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="inline-flex">
+      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "btn-gray" %>
+      <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "btn-gray" %>
+      <%= link_to 'Back to journal', @dream_log.journal, class: "btn-gray" %>
     </div>
-    <%= link_to 'Back to journal', @dream_log.journal, class: "btn-gray" %>
   </div>
 </div>
