@@ -10,9 +10,9 @@
     <%= render @journal %>
     <%= render 'journals/dream_logs', journal: @journal %>
 
-    <%= link_to 'Edit this journal', edit_journal_path(@journal), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this journal', edit_journal_path(@journal), class: "btn-gray" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this journal', journal_path(@journal), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to 'Destroy this journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
     </div>
     <%= link_to 'Back to journals', journals_path, class: "btn-gray" %>
   </div>
