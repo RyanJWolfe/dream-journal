@@ -1,4 +1,4 @@
-<div class="simple-calendar">
+<div class="">
   <div class="calendar-heading">
     <%= render 'simple_calendar/calendar_previous', calendar: calendar%>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
@@ -9,15 +9,15 @@
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th class="w-screen">
-            <div class="inline-block px-1"><%= t('date.abbr_day_names')[day.wday] %></div>
-            <div class="float-right px-1"><%= day.day %></div>
+          <th class="w-screen bg-transparent">
+            <div class="inline-block float-left px-1.5"><%= t('date.abbr_day_names')[day.wday] %></div>
+            <div class="float-right px-1.5"><%= day.day %></div>
           </th>
         <% end %>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="bg-gray-800">
       <% date_range.each_slice(7) do |week| %>
         <%= content_tag :tr, class: calendar.tr_classes_for(week) do %>
           <% week.each do |day| %>
