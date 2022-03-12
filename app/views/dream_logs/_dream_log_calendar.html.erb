@@ -1,5 +1,5 @@
 <div id="<%= dom_id dream_log %>" class="flex justify-center mt-2">
-  <div class="text-sm">
+  <div class="text-sm hidden md:block">
     <% if dream_log.dream == false %>
       <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
         <%= material_icon.close.md_36.css_class('dark:text-red-500') %>
@@ -13,7 +13,17 @@
         <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
           <%= material_icon.cloud_circle.md_36.css_class('dark:text-blue-500') %>
         <% end %>
-        <%=  %>
+      <%  end %>
+    <% end %>
+  </div>
+  <div class="block md:hidden">
+    <% if dream_log.dream == false %>
+        <%= link_to fa_icon('circle', class: "dark:text-red-500"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
+    <% else %>
+      <% if dream_log.remember == false %>
+        <%= link_to fa_icon('circle', class: "dark:text-gray-300"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
+      <% else %>
+        <%= link_to fa_icon('circle', class: "dark:text-blue-500"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
       <%  end %>
     <% end %>
   </div>
