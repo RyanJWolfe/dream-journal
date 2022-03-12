@@ -1,20 +1,12 @@
 <div id="<%= dom_id dream_log %>" class="flex justify-center">
-  <div class="text-sm hidden md:block md:mt-2">
+  <div class="text-sm hidden md:block md:mt-4">
     <% if dream_log.dream == false %>
-      <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
-        <%= material_icon.close.md_36.css_class('dark:text-red-500') %>
-      <% end %>
+      <%= link_to fa_icon('times', class: "fa-2x dark:text-red-500"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
+    <% elsif dream_log.remember == false %>
+      <%= link_to fa_icon('cloud', class: "fa-2x dark:text-gray-300"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
     <% else %>
-      <% if dream_log.remember == false %>
-        <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
-          <%= material_icon.cloud.md_36.css_class('dark:text-gray-500') %>
-        <% end %>
-      <% else %>
-        <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
-          <%= material_icon.cloud_circle.md_36.css_class('dark:text-blue-500') %>
-        <% end %>
-      <%  end %>
-    <% end %>
+      <%= link_to fa_icon('cloud', class: "fa-2x dark:text-blue-500"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
+    <%  end %>
   </div>
   <div class="md:hidden">
     <% if dream_log.dream == false %>
