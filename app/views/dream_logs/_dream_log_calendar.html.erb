@@ -1,5 +1,5 @@
-<div id="<%= dom_id dream_log %>" class="flex justify-center mt-2">
-  <div class="text-sm hidden md:block">
+<div id="<%= dom_id dream_log %>" class="flex justify-center">
+  <div class="text-sm hidden md:block md:mt-2">
     <% if dream_log.dream == false %>
       <%= link_to journal_dream_log_path(dream_log.journal_id, dream_log) do %>
         <%= material_icon.close.md_36.css_class('dark:text-red-500') %>
