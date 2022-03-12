@@ -1,8 +1,8 @@
 <div class="flex flex-col items-center w-screen md:w-full md:px-4">
   <%= month_calendar(events: @journal.dream_logs) do |date, logs| %>
     <div class="bg-gray-800 h-14 md:h-24">
-      <%= content_tag(:div, date.day, class: "p-1 inline") %>
-      <%= link_to fa_icon('pencil-square-o', class: "dark:text-blue-700 p-1 float-right"), new_journal_dream_log_path(@journal, :created_at => date) if logs.empty? %>
+      <%= content_tag(:div, date.day, class: "pt-1 text-center") %>
+      <%= link_to fa_icon('pencil-square-o', class: "dark:text-blue-700 p-1"), new_journal_dream_log_path(@journal, :created_at => date) if logs.empty? %>
       <% logs.each do |log| %>
         <div id="dream_logs">
           <%= render "dream_logs/dream_log_calendar", dream_log: log %>
