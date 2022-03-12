@@ -1,15 +1,15 @@
-<div class="">
+<div class="w-full">
   <div class="calendar-heading">
     <%= render 'simple_calendar/calendar_previous', calendar: calendar%>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
     <%= render 'simple_calendar/calendar_next', calendar: calendar%>
   </div>
 
-  <table class="table table-striped">
+  <table class="w-full">
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th class="w-screen">
+          <th>
             <div><%= t('date.abbr_day_names')[day.wday] %></div>
           </th>
         <% end %>

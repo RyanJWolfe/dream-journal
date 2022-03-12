@@ -1,6 +1,6 @@
 <%= turbo_stream_from @journal %>
 
-<div id="journals" class="flex flex-col max-w-xl mx-auto items-center">
+<div id="journals" class="flex flex-col max-w-xl mx-auto items-center md:max-w-4xl">
   <%= render @journal %>
   <hr class="my-4 divider" />
   <%= render 'journals/dream_logs', journal: @journal %>
