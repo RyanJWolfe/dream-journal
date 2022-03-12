@@ -16,7 +16,7 @@
       <%  end %>
     <% end %>
   </div>
-  <div class="block md:hidden">
+  <div class="md:hidden">
     <% if dream_log.dream == false %>
         <%= link_to fa_icon('circle', class: "dark:text-red-500"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
     <% else %>
