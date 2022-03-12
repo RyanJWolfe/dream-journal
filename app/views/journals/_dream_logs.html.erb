@@ -4,9 +4,9 @@
       <%= content_tag(:div, date.day, class: "pt-1 text-center") %>
       <% if logs.empty? %>
         <div class="text-center md:block md:mt-4">
-          <%= link_to fa_icon('plus-square-o', class: "fa-2x dark:text-gray-700"),
+          <%= link_to fa_icon('plus-square-o', class: "fa-2x dark:text-gray-700 hover:text-blue-700 dark:hover:text-white"),
                       new_journal_dream_log_path(@journal, :created_at => date), class: "hidden md:block" %>
-          <%= link_to fa_icon('plus-square-o', class: "dark:text-gray-700"),
+          <%= link_to fa_icon('plus-square-o', class: "dark:text-gray-700 hover:text-blue-700 dark:hover:text-white"),
                       new_journal_dream_log_path(@journal, :created_at => date), class: "md:hidden" %>
         </div>
       <% end %>
