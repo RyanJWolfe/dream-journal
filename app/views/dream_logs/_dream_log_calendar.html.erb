@@ -15,7 +15,7 @@
       <% if dream_log.remember == false %>
         <%= link_to fa_icon('circle', class: "text-gray-300 dark:text-gray-300 hover:text-gray-100 dark:hover:text-white"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
       <% else %>
-        <%= link_to fa_icon('circle', class: "text-blue-300 dark:text-blue-500 hover:text-gray-100 dark:hover:text-white"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
+        <%= link_to fa_icon('circle', class: "text-blue-300 dark:text-blue-500 hover:text-blue-300 dark:hover:text-white"), journal_dream_log_path(dream_log.journal_id, dream_log) %>
       <%  end %>
     <% end %>
   </div>
