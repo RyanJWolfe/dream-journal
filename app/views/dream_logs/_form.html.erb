@@ -1,4 +1,4 @@
-<%= form_with(model: [journal, dream_log], class: "contents") do |form| %>
+<%= form_with(model: [journal, dream_log], class: "contents", data: { controller: "dream-log-form"}) do |form| %>
   <% if dream_log.errors.any? %>
     <div id="error_explanation" class="error">
       <h2><%= pluralize(dream_log.errors.count, "error") %> prohibited this dream_log from being saved:</h2>
@@ -19,13 +19,9 @@
     <span class="toggle-span">Did you have a dream?</span>
   <% end %>
 
-  <%= form.label :remember, class: "toggle-label" do %>
-    <%= form.check_box :remember, class: "sr-only" %>
-    <div class="toggle-div"></div>
-    <span class="toggle-span">Do you remember your dream?</span>
-  <% end %>
+  <%= render 'dream_logs/remember_dream_form', form: form %>
 
-  <div class="my-5">
+  <div data-dream-log-form-target="dreamBody" class="my-5 hidden">
     <%= form.label :body, class: "input-label" %>
     <%= form.text_area :body, rows: 4, class: "text-field" %>
   </div>

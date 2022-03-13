@@ -1,0 +1,7 @@
+<%= form.label :remember, class: "toggle-label" do %>
+  <%= form.check_box :remember, class: "sr-only", data: {
+    action: "click->dream-log-form#toggleDreamBody",
+    target: "dream-log-form.rememberDreamCB" } %>
+  <div class="toggle-div"></div>
+  <span class="toggle-span">Do you remember your dream?</span>
+<% end %>
