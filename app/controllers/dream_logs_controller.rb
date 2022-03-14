@@ -15,7 +15,10 @@ class DreamLogsController < ApplicationController
 
   # GET /dream_logs/new
   def new
-    @dream_log = DreamLog.new(journal_id: @journal.id, dream: true)
+    @dream_log = DreamLog.new(journal_id: @journal.id, dream: true, sleep_time: 0)
+    if params[:created_at]
+      @dream_log.created_at = params[:created_at]
+    end
   end
 
   # GET /dream_logs/1/edit

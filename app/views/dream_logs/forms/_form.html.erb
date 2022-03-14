@@ -15,7 +15,8 @@
   <%= render 'dream_logs/forms/remember_dream_form', form: form %>
   <div class="my-5">
     <%= form.label :sleep_time, class: "input-label" %>
-    <%= form.number_field :sleep_time, class: "text-field-small" %>
+    <%= form.range_field :sleep_time, :in=>0..12, :step=>0.5, value: dream_log.sleep_time, class: "inline-block", data: { action: "click->dream-log-form#sleepTimeChanged"} %>
+    <div data-dream-log-form-target="sleepTime" class="inline"><%= dream_log.sleep_time %></div>
   </div>
   <div class="inline-flex">
     <%= form.submit class: "btn-blue" %>
