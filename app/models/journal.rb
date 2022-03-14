@@ -5,6 +5,6 @@ class Journal < ApplicationRecord
   validates :author, presence: true
 
   def auth(current_user)
-    current_user && current_user.id == @journal.user_id
+    current_user && current_user.id == self.user_id
   end
 end
