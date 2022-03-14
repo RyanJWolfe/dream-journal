@@ -1,17 +1,15 @@
 <div id="<%= dom_id journal %>">
-  <p class="my-5">
-    <strong class="font-medium mb-1">Title:</strong>
-    <%= journal.title %>
+  <p class="text-center">
+    <strong class="text-2xl font-hard mb-1 text-gray-900 dark:text-white"><%= journal.title %></strong>
   </p>
 
-  <p class="my-5">
-    <strong class="font-medium mb-1">Author:</strong>
-    <%= journal.author %>
+  <p class="text-center">
+    <strong class="font-light mb-1 text-gray-500 dark:text-gray-400"><%= journal.author %></strong>
   </p>
 
   <% if action_name != "show" %>
     <%= link_to "Show this journal", journal, class: "btn-gray" %>
-    <%= link_to 'Edit this journal', edit_journal_path(journal), class: "btn-gray" %>
+    <%= link_to 'Edit this journal', edit_journal_path(journal), class: "btn-gray" if journal.auth(current_user) %>
     <hr class="mt-6 divider">
   <% end %>
 </div>
