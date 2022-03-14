@@ -82,7 +82,7 @@
         @apply ml-3 text-sm font-medium text-gray-900 dark:text-gray-300
     }
     .toggle-label {
-        @apply my-5 flex relative items-center cursor-pointer
+        @apply flex relative items-center cursor-pointer
     }
     .toggle-bg:after {
         content: '';

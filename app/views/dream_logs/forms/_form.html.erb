@@ -13,15 +13,9 @@
 
   <%= form.hidden_field :created_at %>
 
-  <%= render 'dream_logs/have_dream_toggle', form: form %>
+  <%= render 'dream_logs/forms/have_dream_toggle', form: form %>
 
-  <div data-dream-log-form-target="remember" class="hidden">
-    <%= render 'dream_logs/remember_dream_toggle', form: form %>
-    <div data-dream-log-form-target="dreamBody" class="my-5 hidden">
-      <%= form.label :body, class: "input-label" %>
-      <%= form.text_area :body, rows: 4, class: "text-field" %>
-    </div>
-  </div>
+  <%= render 'dream_logs/forms/remember_dream_form', form: form %>
 
   <div class="my-5">
     <%= form.label :sleep_time, class: "input-label" %>

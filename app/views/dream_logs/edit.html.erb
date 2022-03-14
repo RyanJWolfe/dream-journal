@@ -1,7 +1,7 @@
 <div class="mx-auto md:w-2/3 w-full">
   <h1 class="font-bold text-4xl">Editing dream log</h1>
 
-  <%= render "form", journal: @dream_log.journal, dream_log: @dream_log %>
+  <%= render "dream_logs/forms/form", journal: @dream_log.journal, dream_log: @dream_log %>
 
   <%= link_to "Show this dream log", journal_dream_log_path(@dream_log.journal_id), class: "inline-flex btn-gray" %>
   <%= link_to "Back to journal", @dream_log.journal, class: "inline-flex btn-gray" %>
