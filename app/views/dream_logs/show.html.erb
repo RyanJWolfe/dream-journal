@@ -2,8 +2,8 @@
   <div class="mx-auto">
     <%= render 'dream_log', dream_log: @dream_log %>
     <div class="inline-flex space-x-1">
-      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "inline-flex btn-blue" %>
-      <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "inline-flex btn-gray" %>
+      <%= link_to 'Edit', edit_journal_dream_log_path(@dream_log.journal, @dream_log), class: "inline-flex btn-blue" if @dream_log.journal.auth(current_user) %>
+      <%= button_to 'Delete', journal_dream_log_path(@dream_log.journal, @dream_log), method: :delete, class: "inline-flex btn-gray" if @dream_log.journal.auth(current_user) %>
     </div>
     <%= link_to 'Back to journal', @dream_log.journal, class: "inline-flex btn-gray" %>
   </div>

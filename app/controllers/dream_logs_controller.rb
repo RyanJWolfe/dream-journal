@@ -1,7 +1,7 @@
 class DreamLogsController < ApplicationController
   before_action :set_journal
   before_action :set_dream_log, only: %i[show edit update destroy]
-  before_action :verify_user, only: %i[create edit update destroy]
+  before_action :verify_user, only: %i[create edit update destroy new]
 
   # GET /dream_logs or /dream_logs.json
   def index
