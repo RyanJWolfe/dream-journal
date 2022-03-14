@@ -1,6 +1,7 @@
 class DreamLogsController < ApplicationController
   before_action :set_journal
   before_action :set_dream_log, only: %i[show edit update destroy]
+  before_action :verify_user, only: %i[create edit update destroy]
 
   # GET /dream_logs or /dream_logs.json
   def index
@@ -54,6 +55,12 @@ class DreamLogsController < ApplicationController
   end
 
   private
+
+  def verify_user
+    redirect_to(new_user_session_path, notice: 'Please sign in to continue!') and return unless current_user
+
+    redirect_to(@journal, notice: 'You cannot edit this journal') unless current_user.id == @journal.user_id
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_journal
