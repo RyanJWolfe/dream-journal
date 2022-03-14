@@ -7,8 +7,8 @@
   <hr class="my-4 divider" />
 
   <div class="inline-flex">
-    <%= link_to 'Edit journal', edit_journal_path(@journal), class: "btn-gray" %>
-    <%= button_to 'Delete journal', journal_path(@journal), method: :delete, class: "btn-gray" %>
+    <%= link_to 'Edit journal', edit_journal_path(@journal), class: "btn-gray" if @journal.auth(current_user) %>
+    <%= button_to 'Delete journal', journal_path(@journal), method: :delete, class: "btn-gray" if @journal.auth(current_user) %>
     <%= link_to 'Back to all journals', journals_path, class: "btn-gray" %>
   </div>
 </div>

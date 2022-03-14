@@ -11,6 +11,6 @@
 
   <% if action_name != "show" %>
     <%= link_to "Show this journal", journal, class: "btn-gray" %>
-    <%= link_to 'Edit', edit_journal_path(journal), class: "btn-gray" %>
+    <%= link_to 'Edit', edit_journal_path(journal), class: "btn-gray" if journal.auth(current_user) %>
   <% end %>
 </div>
