@@ -3,6 +3,7 @@
 # Controller for Journals
 class JournalsController < ApplicationController
   before_action :set_journal, only: %i[show edit update destroy]
+  before_action :verify_user, only: %i[edit update destroy]
 
   # GET /journals or /journals.json
   def index
@@ -18,6 +19,8 @@ class JournalsController < ApplicationController
 
   # GET /journals/new
   def new
+    redirect_to(new_user_session_path, notice: 'Please sign in to continue!') and return unless current_user
+
     @journal = Journal.new
   end
 
@@ -63,6 +66,12 @@ class JournalsController < ApplicationController
   end
 
   private
+
+  def verify_user
+    redirect_to(new_user_session_path, notice: 'Please sign in to continue!') and return unless current_user
+
+    redirect_to(@journal, notice: 'You cannot edit this journal') unless current_user.id == @journal.user_id
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_journal
