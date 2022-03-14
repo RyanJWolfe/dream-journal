@@ -13,17 +13,14 @@
 
   <%= form.hidden_field :created_at %>
 
-  <%= form.label :dream, class: "toggle-label" do %>
-    <%= form.check_box :dream, class: "sr-only" %>
-    <div class="toggle-div"></div>
-    <span class="toggle-span">Did you have a dream?</span>
-  <% end %>
+  <%= render 'dream_logs/have_dream_toggle', form: form %>
 
-  <%= render 'dream_logs/remember_dream_form', form: form %>
-
-  <div data-dream-log-form-target="dreamBody" class="my-5 hidden">
-    <%= form.label :body, class: "input-label" %>
-    <%= form.text_area :body, rows: 4, class: "text-field" %>
+  <div data-dream-log-form-target="remember" class="hidden">
+    <%= render 'dream_logs/remember_dream_toggle', form: form %>
+    <div data-dream-log-form-target="dreamBody" class="my-5 hidden">
+      <%= form.label :body, class: "input-label" %>
+      <%= form.text_area :body, rows: 4, class: "text-field" %>
+    </div>
   </div>
 
   <div class="my-5">

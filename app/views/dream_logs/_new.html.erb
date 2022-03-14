@@ -1,15 +1,13 @@
 <%= form_with model: [ journal, DreamLog.new(dream: true) ], data: { controller: "dream-log-form"} do |form| %>
   <div class="card-static flex flex-col space-y-8">
-    <%= form.label :dream, class: "toggle-label" do %>
-      <%= form.check_box :dream, class: "sr-only" %>
-      <div class="toggle-div"></div>
-      <span class="toggle-span">Did you have a dream?</span>
-    <% end %>
-    <%= render 'dream_logs/remember_dream_form', form: form %>
-    <p data-dream-log-form-target="dreamBody" class="flex flex-col hidden">
-      <%= form.label :body, class: "input-label" %><br>
-      <%= form.text_area :body, class: "text-field" %>
-    </p>
+    <%= render 'dream_logs/have_dream_toggle', form: form %>
+    <div data-dream-log-form-target="remember" class="hidden">
+      <%= render 'dream_logs/remember_dream_toggle', form: form %>
+      <p data-dream-log-form-target="dreamBody" class="flex flex-col hidden">
+        <%= form.label :body, class: "input-label" %><br>
+        <%= form.text_area :body, class: "text-field" %>
+      </p>
+    </div>
     <p class="flex justify-between">
       <%= form.label :sleep_time, class: "input-label" %>
       <%= form.number_field :sleep_time, step: 0.5, min: 0, class: "text-field-small" %>
