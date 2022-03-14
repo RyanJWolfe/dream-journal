@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      boxShadow: {
+        'inner-even': 'inset 0 0 6px rgb(0 0 0 / 0.05)',
+      }
     },
   },
   plugins: [
