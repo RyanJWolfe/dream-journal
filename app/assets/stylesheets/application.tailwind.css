@@ -103,11 +103,11 @@
 }
 
 .today {
-    @apply shadow-amber-200 shadow-inner-even !important
+    @apply rounded-lg shadow-amber-200 shadow-inner-even !important
 }
 
 .day {
-    @apply border-2 border-gray-900 md:border-4
+    @apply rounded border-2 border-gray-900 md:border-4
 }
 
 .past {}
